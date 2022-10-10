@@ -1,9 +1,9 @@
-#0x05. Python - Exceptions
+0x05. Python - Exceptions
 
-#Learning Objectives
+Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-#General
+General
 Why Python programming is awesome
 What’s the difference between errors and exceptions
 What are exceptions and how to use them
