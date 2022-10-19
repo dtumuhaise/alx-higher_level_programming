@@ -46,6 +46,6 @@ class Rectangle:
 
     def __repr__(self):
         if self.width == 0 or self.height == 0:
-            return 0
+            return ''
         else:
             return '\n'.join('#' * self.width for _ in range(self.height))
