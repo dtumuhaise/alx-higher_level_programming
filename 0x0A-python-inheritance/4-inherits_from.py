@@ -2,7 +2,7 @@
 """
 Function that returns true if object is
 an instance of a class that inherited
-from a specified class
+frm a specified class
 """
 
 
