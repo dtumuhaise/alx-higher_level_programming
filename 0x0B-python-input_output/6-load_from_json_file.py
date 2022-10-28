@@ -14,4 +14,4 @@ def load_from_json_file(filename):
     """
 
     with open(filename) as f:
-        json.loads(f)
+        return json.loads(f)
