@@ -9,7 +9,7 @@ import json
 
 def load_from_json_file(filename):
     """
-    define function that creates object from 
+    define function that creates object from
     JSON file
     """
 
