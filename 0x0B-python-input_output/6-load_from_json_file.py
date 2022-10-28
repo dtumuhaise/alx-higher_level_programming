@@ -10,7 +10,7 @@ import json
 def load_from_json_file(filename):
     """
     define function that creates object from
-    JSON file
+    JSON file.
     """
 
     with open(filename, "r", encoding="utf8") as f:
