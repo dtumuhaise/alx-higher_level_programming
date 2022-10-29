@@ -108,8 +108,3 @@ class Rectangle(Base):
             self.y = args[4]
         except IndexError:
             pass
-
-            
-
-        
-
