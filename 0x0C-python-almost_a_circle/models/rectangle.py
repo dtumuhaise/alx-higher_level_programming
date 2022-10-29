@@ -12,31 +12,80 @@ class Rectangle(Base):
     define class Rectangle
     """
 
+    def __init__(self, width, height, x=0, y=0, id=None):
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+        super(Rectangle, self).__init__(id)
+
     # getters
-    def get_width(self):
+    @property
+    def width(self):
         return self.__width
 
-    def get_height(self):
+    @property
+    def height(self):
         return self.__height
 
-    def get_x(self):
+    @property
+    def x(self):
         return self.__x
 
-    def get_y(self):
+    @property
+    def y(self):
         return self.__y
 
     # setters
-    def set_width(self, width):
-        self.__width = width
+    @width.setter
+    def width(self, value):
+        self.integer_validator("width", value)
+        self.__width = value
 
-    def set_height(self, height):
-        self.__height = height
+    @height.setter
+    def height(self, value):
+        self.integer_validator("height", value)
+        self.__height = value
 
-    def set_x(self, x):
-        self.__x = x
+    @x.setter
+    def x(self, value):
+        self.integer_validator("x", value)
+        self.__x = value
 
-    def set_y(self, y):
-        self.__y = y
+    @y.setter
+    def y(self, value):
+        self.integer_validator("y", value)
+        self.__y = value
 
-    def __init__(self, width, height, x=0, y=0, id=None):
-        super(Rectangle, self).__init__(id)
+    @staticmethod
+    def integer_validator(name, value):
+        """
+        function to validates an integer
+        """
+
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+
+        if name == "x" or name == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(name))
+
+        elif value <= 0:
+            raise ValueError("{} must be > than 0".format(name))
+
+    def area(self):
+        """method that return the area of
+        rectangle
+        """
+
+        return self.__height * self.__width
+
+    def display(self):
+        """method that prints the rectangle
+        to stdout
+        """
+
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print('#', end='')
+            print()
