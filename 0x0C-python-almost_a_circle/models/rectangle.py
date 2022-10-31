@@ -113,6 +113,16 @@ class Rectangle(Base):
             except IndexError:
                 pass
         else:
-            for k, v in kwargs.items():
-                self.__setattr__(k, v)
-            return
+            for key, value in kwargs.items():
+                if key == "id":
+                    if type(value) != int and value is not None:
+                        raise TypeError("id must be an integer")
+                    self.id = value
+                if key == "width":
+                    self.__width = value
+                if key == "height":
+                    self.__height = value
+                if key == "x":
+                    self.__x = value
+                if key == "y":
+                    self.__y = value
