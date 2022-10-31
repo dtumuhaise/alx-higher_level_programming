@@ -106,7 +106,7 @@ class Rectangle(Base):
         if args is not None:
             for k, v in kwargs.items():
                 self.__setattr__(k, v)
-        return
+            return
         try:
             self.id = args[0]
             self.width = args[1]
