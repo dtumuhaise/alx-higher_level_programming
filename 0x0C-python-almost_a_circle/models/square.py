@@ -56,3 +56,10 @@ class Square(Rectangle):
                     self.x = value
                 if key == "y":
                     self.y = value
+
+        def to_dictionary(self):
+            """ returns dict representation of rectangle
+            """
+
+            return dict((key, value) for (key, value)
+                        in self.__dict__.items())
