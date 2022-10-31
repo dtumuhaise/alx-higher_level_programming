@@ -99,7 +99,14 @@ class Rectangle(Base):
                                                        self.x, self.y,
                                                        self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
+        """ update to use **kwargs
+        """
+
+        if args is not None:
+            for k, v in kwargs.items():
+                self.__setattr__(k, v)
+        return
         try:
             self.id = args[0]
             self.width = args[1]
