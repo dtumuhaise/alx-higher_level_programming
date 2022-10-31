@@ -104,10 +104,6 @@ class Rectangle(Base):
         """
 
         if args is not None:
-            for k, v in kwargs.items():
-                self.__setattr__(k, v)
-            return
-        else:
             try:
                 self.id = args[0]
                 self.width = args[1]
@@ -116,3 +112,7 @@ class Rectangle(Base):
                 self.y = args[4]
             except IndexError:
                 pass
+        else:
+            for k, v in kwargs.items():
+                self.__setattr__(k, v)
+            return
