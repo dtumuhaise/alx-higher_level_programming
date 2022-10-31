@@ -58,7 +58,7 @@ class Rectangle(Base):
         self.__y = value
 
     @staticmethod
-    def integer_validator(self, name, value, eq=True):
+    def integer_validator(name, value):
         """
         function to validates an integer
         """
@@ -66,10 +66,11 @@ class Rectangle(Base):
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
 
-        if eq and value < 0:
-            raise ValueError("{} must be >= 0".format(name))
+        if name == "x" or name == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(name))
 
-        elif not eq and value <= 0:
+        elif value <= 0:
             raise ValueError("{} must be > than 0".format(name))
 
     def area(self):
