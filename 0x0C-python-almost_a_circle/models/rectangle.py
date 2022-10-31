@@ -70,7 +70,7 @@ class Rectangle(Base):
             if value < 0:
                 raise ValueError("{} must be >= 0".format(name))
 
-        if value <= 0:
+        elif value <= 0:
             raise ValueError("{} must be > than 0".format(name))
 
     def area(self):
