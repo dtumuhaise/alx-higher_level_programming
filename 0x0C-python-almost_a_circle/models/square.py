@@ -35,6 +35,9 @@ class Square(Rectangle):
         kwargs and args
         """
 
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                self.__setattr(key, value)
         try:
             self.id = args[0]
             self.size = args[1]
@@ -42,20 +45,6 @@ class Square(Rectangle):
             self.y = args[3]
         except IndexError:
             pass
-
-        for key, value in kwargs.items():
-            if args is not None and args is not []:
-                break
-            else:
-                if key == "id":
-                    if type(value) != int and value is not None:
-                        raise TypeError("id must be an integer")
-                if key == "size":
-                    self.size = value
-                if key == "x":
-                    self.x = value
-                if key == "y":
-                    self.y = value
 
         def to_dictionary(self):
             """ returns dict representation of rectangle
