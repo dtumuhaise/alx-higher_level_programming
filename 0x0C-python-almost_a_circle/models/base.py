@@ -55,3 +55,18 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns instance with attributes already set
+        """
+
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls.__name__ == "Rectangle":
+            mod = Rectangle(2, 7)
+        elif cls.__name__ == "Square":
+            mod = Square(6)
+        mod.update(**dictionary)
+        return mod
