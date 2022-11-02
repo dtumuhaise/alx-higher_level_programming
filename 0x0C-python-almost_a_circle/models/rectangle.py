@@ -120,5 +120,5 @@ class Rectangle(Base):
         """ returns dict representation of rectangle
         """
 
-        return dict((key, value) for (key, value)
-                    in self.__dict__.items())
+        return {'x': self.__x, 'y': self.__y, 'id': self.id,
+                'height': self.__height, 'width': self.__width}
