@@ -70,3 +70,22 @@ class Base:
             mod = Square(6)
         mod.update(**dictionary)
         return mod
+
+    @classmethod
+    def load_from_file(cls):
+        """return list of instances
+        """
+
+        filename = cls.__name__ + ".json"
+
+        if filename is None or []:
+            return []
+        else:
+            with open(filename, encoding='utf8') as f:
+                content = cls.from_json_string(f.read())
+
+        instances = []
+        for instance in content:
+            temp = cls.create(**instance)
+            instances.append(temp)
+        return instances
