@@ -103,29 +103,18 @@ class Rectangle(Base):
         """ update to use **kwargs
         """
 
-        if args is not None:
-            try:
-                self.id = args[0]
-                self.width = args[1]
-                self.height = args[2]
-                self.x = args[3]
-                self.y = args[4]
-            except IndexError:
-                pass
-        else:
+        if len(args) == 0:
             for key, value in kwargs.items():
-                if key == "id":
-                    if type(value) != int and value is not None:
-                        raise TypeError("id must be an integer")
-                    self.id = value
-                if key == "width":
-                    self.width = value
-                if key == "height":
-                    self.height = value
-                if key == "x":
-                    self.x = value
-                if key == "y":
-                    self.y = value
+                self.__setattr__(key, value)
+
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass       
 
     def to_dictionary(self):
         """ returns dict representation of rectangle
