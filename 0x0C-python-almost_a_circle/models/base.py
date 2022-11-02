@@ -84,8 +84,8 @@ class Base:
             with open(filename, encoding='utf8') as f:
                 content = cls.from_json_string(f.read())
 
-        instances = []
-        for instance in content:
-            temp = cls.create(**instance)
-            instances.append(temp)
-        return instances
+            instances = []
+            for instance in content:
+                temp = cls.create(**instance)
+                instances.append(temp)
+            return instances
