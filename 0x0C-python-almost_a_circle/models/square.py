@@ -46,9 +46,8 @@ class Square(Rectangle):
         except IndexError:
             pass
 
-        def to_dictionary(self):
-            """ returns dict representation of rectangle
-            """
+    def to_dictionary(self):
+        """ returns dict representation of rectangle
+        """
 
-            return dict((key, value) for (key, value)
-                        in self.__dict__.items())
+        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
