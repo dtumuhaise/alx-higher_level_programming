@@ -114,7 +114,7 @@ class Rectangle(Base):
             self.x = args[3]
             self.y = args[4]
         except IndexError:
-            pass       
+            pass
 
     def to_dictionary(self):
         """ returns dict representation of rectangle
