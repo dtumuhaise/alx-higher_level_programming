@@ -1,2 +1,2 @@
 -- creates table
-CREATE TABLE IF NOT EXISTS (id INT, name VARCHAR(256));
+CREATE TABLE (id INT, name VARCHAR(256))  IF NOT EXISTS; 
