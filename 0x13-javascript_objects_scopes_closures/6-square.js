@@ -9,7 +9,7 @@ module.exports = class Square extends Rectangle {
   // prints rectangle using character 'C'
   charPrint (c) {
     if (!c) {
-      this.print();
+      super.print();
     } else {
       for (let i = 0; i < this.height; i++) {
         for (let j = 0; j < this.height; j++) {
