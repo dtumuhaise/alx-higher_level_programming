@@ -20,7 +20,7 @@ class Rectangle {
 
   // exchange width and height of the rectangle
   rotate () {
-    let temp;
+    let temp = 0;
     temp = this.width;
     this.width = this.height;
     this.height = temp;
