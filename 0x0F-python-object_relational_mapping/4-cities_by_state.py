@@ -19,13 +19,15 @@ if __name__ == "__main__":
 
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM cities ORDER BY id ASC"
+        """SELECT cities.id, cities.name, states.name
+        FROM cities
+        LEFT JOIN states ON cities.state_id = states.id
+        ORDER BY cities.id ASC"""
     )
 
-    cities = cur.fetchall()
+    query_rows = cur.fetchall()
 
-    if cities is not None:
-        for row in cities:
-            print("({}, '{}', '{}')".format(row[0], row[1], row[2]))
-        cur.close()
-        db.close()
+    for row in query_rows:
+        print(row)
+    cur.close()
+    db.close()
