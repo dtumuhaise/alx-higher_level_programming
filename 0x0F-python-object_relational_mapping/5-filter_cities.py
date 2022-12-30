@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     for row in query_rows:
         if row[2] == argv[4]:
-            if cont > 0:
+            if i > 0:
                 print(", ", end="")
             print(row[1], end="")
             i = i + 1
