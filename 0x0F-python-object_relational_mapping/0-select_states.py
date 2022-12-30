@@ -16,6 +16,6 @@ if __name__ == "__main__":
     states = cur.fetchall()
     if states is not None:
         for row in states:
-            print(("({}, '{}'").format(row[0], row[1]))
+            print("({}, '{}')".format(row[0], row[1]))
         cur.close()
         db.close()
