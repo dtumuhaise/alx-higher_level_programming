@@ -16,10 +16,12 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3]
     )
-    cur = cont.cursor()
+    cur = db.cursor()
     cur.execute(
         "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC",
-        (sys.argv[4]))
+        (sys.argv[4],)
+        )
+
     db = cur.fetchall()
     for i in db:
         if i[1] == sys.argv[4]:
