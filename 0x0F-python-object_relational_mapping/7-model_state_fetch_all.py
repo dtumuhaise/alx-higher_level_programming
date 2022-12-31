@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     """ create an engine """
     engine = create_engine(
-        "mysql+pymysql://{}:{}@localhost:3306/{}".format(
+        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
             argv[1], argv[2], argv[3]
         )
     )
