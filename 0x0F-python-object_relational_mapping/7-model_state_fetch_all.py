@@ -19,13 +19,11 @@ if __name__ == "__main__":
             argv[1], argv[2], argv[3]
         )
     )
-
+    Base.metadata.create_all(engine)
     """create configured session class"""
     Session = sessionmaker(bind=engine)
-
     """create a session"""
-    session = Session()
-    Base.metadata.create_all(engine)
+    session = Session()    
     for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
     session.close()
