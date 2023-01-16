@@ -1,3 +1,3 @@
 #!/bin/bash
 # displays all HTTP method the server will accept
-curl -s -X OPTIONS "$1"
+curl -i -L -X OPTIONS "$1"
