@@ -4,7 +4,7 @@ sends a request and displays body response
 """
 
 import sys
-import urllib.request
+from urllib import request, error
 
 
 if __name__ == "__main__":
@@ -14,5 +14,5 @@ if __name__ == "__main__":
         with urllib.request.urlopen(url) as response:
             html = response.read().decode('utf-8')
             print(html)
-    except urllib.error.HTTPError as e:
+    except error.HTTPError as e:
         print("Error code: ", e.code)
