@@ -4,7 +4,7 @@ sends a request and displays body response
 """
 
 import sys
-from urllib import request, error
+import urllib.request
 
 
 if __name__ == "__main__":
