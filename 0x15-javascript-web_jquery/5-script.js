@@ -1,0 +1,6 @@
+// add li element to a list when user
+// clicks on tag
+
+$('DIV#add_item').click(function () {
+  $('<li>Item</li>').appendTo('.my_list');
+});
